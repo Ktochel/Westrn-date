@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Panel</h1>
+            <a href="/api/admin/logout" class="logout-btn">Logout</a>
+        </div>
+
+        <div class="admin-section" id="manage-admins-section">
+            <h2>Manage Administrators</h2>
+            <form id="add-admin-form">
+                <div class="input-group">
+                    <label for="admin-username">New Username</label>
+                    <input type="text" id="admin-username" required>
+                </div>
+                <div class="input-group">
+                    <label for="admin-password">New Password</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit">Add Admin</button>
+                <p id="admin-message" class="admin-message"></p>
+            </form>
+            <h3 class="table-title">All Admins</h3>
+            <div class="table-container">
+                <table id="admins-table">
+                    <thead><tr><th>Username</th><th>Action</th></tr></thead>
+                    <tbody id="admins-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h2>Manage Girls</h2>
+            <form id="add-girl-form">
+                <div class="input-group"><label for="girl-id">Girl's ID</label><input type="text" id="girl-id" required></div>
+                <div class="input-group"><label for="girl-firstname">First Name</label><input type="text" id="girl-firstname" required></div>
+                <div class="input-group"><label for="girl-photo">Photo URL</label><input type="url" id="girl-photo" required></div>
+                <button type="submit">Add Girl</button>
+                <p id="girl-message" class="admin-message"></p>
+            </form>
+            <h3 class="table-title">All Girls</h3>
+            <div class="table-container">
+                <table id="girls-table">
+                    <thead><tr><th>Girl ID</th><th>First Name</th><th>Action</th></tr></thead>
+                    <tbody id="girls-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="admin-section">
+            <h2>Manage Testimonials</h2>
+            <form id="add-testimonial-form">
+                <div class="input-group">
+                    <label for="testimonial-author">Author's Name</label>
+                    <input type="text" id="testimonial-author" required>
+                </div>
+                <div class="input-group">
+                    <label for="testimonial-date">Date (e.g., 22.02.2025)</label>
+                    <input type="text" id="testimonial-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="testimonial-text">Testimonial Text</label>
+                    <textarea id="testimonial-text" rows="4" required></textarea>
+                </div>
+                <button type="submit">Add Testimonial</button>
+                <p id="testimonial-message" class="admin-message"></p>
+            </form>
+            <h3 class="table-title">All Testimonials</h3>
+            <div class="table-container">
+                <table id="testimonials-table">
+                    <thead><tr><th>Author</th><th>Text</th><th>Action</th></tr></thead>
+                    <tbody id="testimonials-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h2>Manage User</h2>
+            <form id="find-user-form">
+                <div class="input-group">
+                    <label for="user-search-id">Find User by Text ID</label>
+                    <input type="text" id="user-search-id" required>
+                </div>
+                <button type="submit">Find User</button>
+                 <p id="user-find-message" class="admin-message"></p>
+            </form>
+
+            <div id="user-management-area" style="display: none;">
+                <h3 id="managing-user-title"></h3>
+                
+                <form id="balances-form">
+                    <div class="input-group">
+                        <label for="main-balance">Main Balance ($)</label>
+                        <input type="number" step="0.01" id="main-balance">
+                    </div>
+                    <div class="input-group">
+                        <label for="cashback-balance">Cashback Balance ($)</label>
+                        <input type="number" step="0.01" id="cashback-balance">
+                    </div>
+                    <button type="submit">Save Balances</button>
+                </form>
+
+                <div class="admin-action-buttons">
+                    <button id="add-video-btn">+1 Video (+$10)</button>
+                    <button id="add-letter-btn">+1 Letter (+$6)</button>
+                </div>
+                
+                <h4 class="table-title">Manage Services for this User</h4>
+                <div class="table-container">
+                    <table id="user-services-table">
+                        <thead>
+                            <tr><th>Service</th><th>Current Price</th><th>Set New Price</th></tr>
+                        </thead>
+                        <tbody id="user-services-table-body"></tbody>
+                    </table>
+                </div>
+
+                 <p id="user-update-message" class="admin-message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

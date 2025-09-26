@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WesternDate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="login-body">
+    <header class="main-header">
+        <div class="site-logo">WesternDate</div>
+        <nav class="main-nav">
+            <a href="/">Home</a>
+            <a href="#" id="support-btn" class="support-button">Support</a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h1>Welcome!</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="user_id">Your ID</label>
+                <input type="text" id="user_id" required pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <button type="submit">CONNECT</button>
+        </form>
+        <p id="message"></p>
+        <p class="alt-action">Don't have an account? <a href="/register.html">Register</a></p>
+    </div>
+    <div id="custom-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-message"></div>
+            <div id="modal-buttons"></div>
+        </div>
+    </div>
+    <script src="global.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

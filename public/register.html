@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - WesternDate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1>Create Account</h1>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="user_id">Choose Your ID (numbers only)</label>
+                <input type="text" id="user_id" required pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <button type="submit">REGISTER</button>
+        </form>
+        <p id="message"></p>
+        <p class="alt-action">Already have an account? <a href="/login.html">Log In</a></p>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
